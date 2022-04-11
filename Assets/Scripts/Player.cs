@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
 
+	[SerializeField] private Transform player;
 	public float movementSpeed = 10f;
 
 	Rigidbody2D rb;
@@ -16,17 +17,21 @@ public class Player : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		
 		Resolution[] resolutions = Screen.resolutions;
-
-		// Print the resolutions
-		foreach (var res in resolutions)
-		{
-			Debug.Log(res.width + "x" + res.height + " : " + res.refreshRate);
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		movement = Input.GetAxis("Horizontal") * movementSpeed;
+			
+		// if (player.position.x > 4.35)
+		// {
+		// 	
+		// 	Debug.Log("я возле границы справа");
+		// }
+		// if (player.position.x < -4.35)
+		// {
+		// 	Debug.Log("я возле границы слева");
+		// }
 	}
 
 	void FixedUpdate()
@@ -35,4 +40,5 @@ public class Player : MonoBehaviour {
 		velocity.x = movement;
 		rb.velocity = velocity;
 	}
+
 }
