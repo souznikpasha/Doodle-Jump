@@ -2,13 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlatformBlue : MonoBehaviour {
 
+    [SerializeField] private float moveSpeed=0.04f;
     public float jumpForce = 10f;
     public float minY = .2f;
     public float maxY = 1.5f;
-    private Vector3 posCreate;
+    public float levelWidth = 8.80f;
+    private Vector3 _posCreate;
+    public int sideMove;
+ 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.y <= 0f)
@@ -25,12 +31,38 @@ public class PlatformBlue : MonoBehaviour {
 
     private void Start()
     {
-        posCreate = transform.position;
+        sideMove = Random.Range(0, 1);
+        _posCreate = transform.position;
     }
 
     void Update ()
     {
-        Debug.Log(posCreate);
+        Move(sideMove);
+        if (transform.position.x > 4.35)
+        {
+            sideMove = 0;
+            Debug.Log("я возле границы справа");
+        }
+        if (transform.position.x < -4.35)
+        {
+            sideMove = 1;
+            Debug.Log("я возле границы слева");
+        }
+    }
+
+    void Move(int sideMove)
+    {
+        Debug.Log(this.sideMove);
+
+        if (sideMove == 1) //right
+        {
+            transform.position = new Vector3((transform.position.x+moveSpeed), transform.position.y, transform.position.z);
+        } 
+        if (sideMove == 0) //left
+        {
+            transform.position = new Vector3((transform.position.x-moveSpeed), transform.position.y, transform.position.z);
+        }
+
     }
 
 }

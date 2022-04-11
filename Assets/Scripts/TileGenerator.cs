@@ -8,7 +8,7 @@ public class TileGenerator : MonoBehaviour
     private List<GameObject> activeTiles = new List<GameObject>();
     private float spawnPos = 0;
     private float tileLength = 3;
-    public float levelWidth = 4.35f+4.57f;
+    public float levelWidth = 8.80f;
     public float minY = .2f;
     public float maxY = 1.5f;
     //Границы экрана -4.35 4.57
