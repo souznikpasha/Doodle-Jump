@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 
 	[SerializeField] private Transform player;
 	public float movementSpeed = 10f;
-
+	private float levelWidth = 8.80f;
 	Rigidbody2D rb;
 
 	float movement = 0f;
@@ -22,16 +22,20 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		movement = Input.GetAxis("Horizontal") * movementSpeed;
-			
-		// if (player.position.x > 4.35)
-		// {
-		// 	
-		// 	Debug.Log("я возле границы справа");
-		// }
-		// if (player.position.x < -4.35)
-		// {
-		// 	Debug.Log("я возле границы слева");
-		// }
+		//Debug.Log(transform.position.x);
+		if (transform.position.x > 4.35)
+		{
+			transform.position = new Vector3(transform.position.x - levelWidth, transform.position.y,
+				transform.position.z);
+			Debug.Log("я возле границы справа");
+		}
+		if (transform.position.x < -4.35)
+		{
+			transform.position = new Vector3(transform.position.x + levelWidth, transform.position.y,
+				transform.position.z);
+			Debug.Log("я возле границы слева");
+		}
+		
 	}
 
 	void FixedUpdate()

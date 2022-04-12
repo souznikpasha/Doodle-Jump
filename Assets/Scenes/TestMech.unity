@@ -141,12 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fe34009f2edea4aa30641587f6c974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.04
-  jumpForce: 10
-  minY: 0.2
-  maxY: 1.5
-  levelWidth: 8.8
-  sideMove: 1
+  moveSpeed: 0.05
 --- !u!1001 &717840134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -385,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148036066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.97, z: 13.93}
+  m_LocalPosition: {x: 0.16, y: 0.66, z: 13.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -917,6 +912,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
+--- !u!1 &1931273914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 913851445484518488, guid: cbb9dede2779ab64e90b195ed318e651,
+    type: 3}
+  m_PrefabInstance: {fileID: 721909411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931273920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931273914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fe34009f2edea4aa30641587f6c974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.05
 --- !u!1 &2006619159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6714842517303496152, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
@@ -951,12 +965,12 @@ PrefabInstance:
     - target: {fileID: 6712215222038630094, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4939241
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 6712215222038630094, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.040752
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6712215222038630094, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
         type: 3}
@@ -1002,6 +1016,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformRed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763843082659865342, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797445275507175914, guid: 8a4548e5f8c3d8a49adee188385b2dcc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4548e5f8c3d8a49adee188385b2dcc, type: 3}
